@@ -1,4 +1,4 @@
-                                               WEB PROGRAMMING LAB
+    WEB PROGRAMMING LAB
 
 Overview
 
