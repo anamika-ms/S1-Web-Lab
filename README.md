@@ -1,7 +1,4 @@
-
----
-
-Web Programming Lab
+                                               WEB PROGRAMMING LAB
 
 Overview
 
@@ -43,8 +40,3 @@ You are encouraged to experiment further with the code to enhance your understan
 ---
 
 Feel free to explore each cycle folder for the corresponding experiments. If you encounter any issues or wish to contribute, please raise an issue or submit a pull request.
-
-
----
-
-
