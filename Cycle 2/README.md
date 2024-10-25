@@ -27,4 +27,4 @@ Build a webpage with a full-height, fixed side navigation bar. The bar should co
 
 ---
 
-Feel free to raise issues or submit pull requests if you encounter any errors or bugs. All programs are tested on modern web browsers and may show inconsistencies in older browsers like Internet Explorer.
+Feel free to raise issues or submit pull requests if you encounter any errors or bugs.<br><br>All programs are tested on modern web browsers and may show inconsistencies in older browsers like Internet Explorer.
