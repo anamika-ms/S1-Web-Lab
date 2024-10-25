@@ -42,4 +42,4 @@ Builds an HTML form for student registration with:
 
 ---
 
-Feel free to raise issues or submit pull requests if you encounter any errors or bugs. All programs are tested on modern web browsers and may show inconsistencies in older browsers like Internet Explorer.
+Feel free to raise issues or submit pull requests if you encounter any errors or bugs.
