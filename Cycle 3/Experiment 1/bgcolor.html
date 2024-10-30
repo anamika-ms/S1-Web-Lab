@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>JS Exp 1</title>
+	<style>
+	body{
+		text-align:center;
+		margin-top:100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>CHANGE BACKGROUND COLOR</h1>
+	<button id="changeColorButton">click here to change color</button>
+	<script>
+		var button=document.getElementById('changeColorButton');
+		button.addEventListener('click',function(){
+			document.body.style.backgroundColor='pink';});
+		button.addEventListener('dblclick',function(){
+			document.body.style.backgroundColor='red';});
+	</script>
+</body>
+</html>	
