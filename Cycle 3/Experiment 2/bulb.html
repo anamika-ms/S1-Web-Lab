@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>JS Exp 2</title>
+	<style>
+		body{
+			text-align:center;
+			padding:100px;
+		    }
+	        #lightBulb{
+	        	    width:200px;
+	        	    height:auto;
+	        	    }
+	        .button{
+	        	margin:10px 50px;
+	        	padding:10px 20px;
+	        	font-size:16px;
+	        	cursor:pointer;
+	        	}
+	  </style>
+</head>
+<body>
+	<h1>Light Bulb Control</h1>
+	<img id="lightBulb" src="bulboff.jpeg" alt="LightBulb">
+	<br>
+	<button class="button" id="onButton">Turn on the light</button>
+	<button Class="button" id="offButton">Turn off the light</button>
+	<script>
+		document.getElementById('onButton').addEventListener('click',function(){
+			document.getElementById('lightBulb').src='bulbon.jpeg';});
+		document.getElementById('offButton').addEventListener('click',function(){
+			document.getElementById('lightBulb').src='bulboff.jpeg';});
+	</script>
+</body>
+</html>
