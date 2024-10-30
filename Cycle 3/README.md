@@ -20,3 +20,9 @@ Develop a web application using JavaScript to validate user input in a form.
   - **Email**: Use a regular expression to verify the format.
   - **Mobile Number**: Check for a valid format (e.g., 10 digits).
   - Provide user feedback for each validation error.
+ 
+    
+---
+
+Feel free to raise issues or submit pull requests if you encounter any errors or bugs.
+
