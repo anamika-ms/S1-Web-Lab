@@ -1,0 +1,156 @@
+
+<html>
+<head>
+    <title>JS Exp 3</title>
+    <style>
+        td {
+            padding: 8px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            document.querySelectorAll('.error').forEach(error => error.textContent = '');
+
+            let isValid = true;
+
+            const firstName = document.forms[0]["firstName"].value;
+            const namepattern=/^[a-zA-Z\s]{1,30}$/;
+            if (!namepattern.test(firstName)){
+                document.getElementById('firstNameError').textContent = '* Name must be charcters !';
+                isValid = false;
+            }
+
+            const lastName = document.forms[0]["lastName"].value;
+            //const namepattern=/^[a-zA-Z\s]{1,30}$/;
+            if (!namepattern.test(lastName)){
+                document.getElementById('lastNameError').textContent = '* Name must be charcters !';
+                isValid = false;
+            }
+
+            const email = document.forms[0]["email"].value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = '* Please enter a valid email address !';
+                isValid = false;
+            }
+
+            const mobileNumber = document.forms[0]["mobileNumber"].value;
+            const mobilePattern = /^\d{10}$/;
+            if (!mobilePattern.test(mobileNumber)) {
+                document.getElementById('mobileError').textContent = '* Mobile Number is Incorrect !';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>STUDENT REGISTRATION FORM</h1><br>
+        <form onsubmit="return validateForm()">
+            <table border="1" cellpadding="2" width="60%">
+                <tr>
+                    <th>FIRST NAME</th>
+                    <td>
+                        <input type="text" name="firstName" maxlength="30" required>
+                        <span class="error" id="firstNameError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>LAST NAME</th>
+                    <td>
+                        <input type="text" name="lastName" maxlength="30" required>
+                        <span class="error" id="lastNameError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>EMAIL</th>
+                    <td>
+                        <input type="text" name="email" required>
+                        <span class="error" id="emailError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>MOBILE NUMBER</th>
+                    <td>
+                        <input type="text" name="mobileNumber" maxlength="10" required>
+                        <span class="error" id="mobileError"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>GENDER</th>
+                    <td>
+                        <input type="radio" value="MALE" name="gender"> MALE
+                        <input type="radio" value="FEMALE" name="gender"> FEMALE
+                    </td>
+                </tr>
+                <tr>
+                    <th>CITY</th>
+                    <td><input type="text" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <th>PINCODE</th>
+                    <td><input type="text" maxlength="6"></td>
+                </tr>
+                <tr>
+                    <th>STATE</th>
+                    <td><input type="text" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <th>COUNTRY</th>
+                    <td>
+                        <select name="country" style="width:40%">
+                            <option value="india">INDIA</option>
+                            <option value="usa">USA</option>
+                            <option value="other">OTHER</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>HOBBIES</th>
+                    <td>
+                        <input type="checkbox" name="hobbies" value="drawing"> DRAWING
+                        <input type="checkbox" name="hobbies" value="singing"> SINGING
+                        <input type="checkbox" name="hobbies" value="dancing"> DANCING
+                        <input type="ch65eckbox" name="hobbies" value="sketching"> SKETCHING
+                        OTHERS: <input type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>COURSE APPLIED FOR</th>
+                    <td>
+                        <input type="radio" value="MCA" name="course"> MCA
+                        <input type="radio" value="MSc" name="course"> MSc
+                        <input type="radio" value="M TECH" name="course"> M TECH
+                        <input type="radio" value="PHD" name="course"> PHD
+                    </td>
+                </tr>
+                <tr>
+                    <th>TYPE YOUR PASSWORD</th>
+                    <td><input type="password" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <th>DATE OF TC</th>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <th>UPLOAD A PHOTO</th>
+                    <td><input type="file" name="photo"></td>
+                </tr>
+                <tr>
+                    <th colspan=2>
+                        <input type="submit" value="submit">
+                        <input type="reset" value="reset">
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
+
