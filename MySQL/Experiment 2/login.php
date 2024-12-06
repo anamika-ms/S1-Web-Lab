@@ -1,77 +1,59 @@
 <?php
-
-session_start();
-
-
 $servername = "localhost";  
 $username = "root";         
 $password = "";             
-$dbname = "student_db";     
-
+$dbname = "students_db";     
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$student_id = $password = "";
+$login_success = false;
 
-$student_id = $password_input = "";
-$error_message = "";
-
-
-if (isset($_SESSION['student_id'])) {
-    echo "<h2>Welcome, " . $_SESSION['student_id'] . "!</h2>";
-    echo "<p>You have successfully logged in.</p>";
-
-    exit();  
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $student_id = $_POST['student_id'];
     $password = $_POST['password'];
 
-
+    // Fetch user from the database
     $sql = "SELECT * FROM login WHERE student_id = '$student_id'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows == 1) {
-
+    if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        
-
-        if (password_verify($password, $row['password'])) {
-
-            $_SESSION['student_id'] = $student_id;
-            header("Location: " . $_SERVER['PHP_SELF']);  
-            exit();
+        // Verify password
+        if ($row['password'] === $password) { // In a real application, use password_hash() and password_verify()
+            $login_success = true;
         } else {
-            $error_message = "Incorrect password.";
+            echo "<script>alert('Invalid password.');</script>";
         }
     } else {
-        $error_message = "Username not found.";
+        echo "<script>alert('No user found with that student id.');</script>";
     }
 }
-
 
 $conn->close();
 ?>
 
-<h2>Login</h2>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+</head>
+<body>
+<center>
+<h2>LOGIN</h2>
+<form method="POST" action="">
+	Student ID : <input type="number" name="student_id" required><br><br>
+        Password : <input type="password" name="password" required><br><br>
+	<input type="submit" name="login" value="Login">
 <?php
-
-if ($error_message != "") {
-    echo "<p style='color: red;'>$error_message</p>";
+if ($login_success) {
+    echo "<h3>Successfully logged in!</h3>";
 }
 ?>
 
-
-<form method="POST" action="">
-    Student ID: <input type="text" name="student_id" required><br><br>
-    Password: <input type="password" name="password" required><br><br>
-    <input type="submit" value="Login">
-</form>
+</body>
+</html>
