@@ -23,7 +23,7 @@ The experiments are organized into cycles that follow the university guidelines.
 
 **Cycle 4:** Working with client-side scripting, exploring HTML5, and building dynamic web pages with responsive design elements.
 
-**Cycle 5:** Final cycle focuses on combining everything into a project and mastering the deployment of web applications.
+**Cycle 5:** Final cycle focuses on combining everything into a project and mastering the deployment of web application.
 
 
 
